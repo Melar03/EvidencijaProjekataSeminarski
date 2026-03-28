@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KlasePodataka")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ebe2b4f021a0b44baf6095ca19597843e2d1dfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e70f97e9822c91a321b08bc7c55db4a15a25010")]
 [assembly: System.Reflection.AssemblyProductAttribute("KlasePodataka")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KlasePodataka")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
