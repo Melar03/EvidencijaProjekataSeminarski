@@ -1,0 +1,28 @@
+﻿using System.Data;
+using KlasePodataka;
+
+namespace PrezentacionaLogika
+{
+    public class FormaZaduzenjaProjektaKlasa
+    {
+        private string konekcioniString;
+
+        public FormaZaduzenjaProjektaKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public DataTable VratiZaduzenja( int idProjekta )
+        {
+            ZaduzenjeDBKlasa db = new ZaduzenjeDBKlasa(konekcioniString);
+            return db.VratiZaduzenjaZaProjekat(idProjekta);
+        }
+
+        public bool ObrisiZaduzenje( int idZaduzenja )
+        {
+            ZaduzenjeDBKlasa db = new ZaduzenjeDBKlasa(konekcioniString);
+            return db.ObrisiZaduzenje(idZaduzenja);
+        }
+
+    }
+}

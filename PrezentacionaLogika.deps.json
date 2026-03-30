@@ -1,0 +1,48 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using KlasePodataka;
+
+namespace PrezentacionaLogika
+{
+    public class FormaProjekatListaKlasa
+    {
+        private string konekcioniString;
+
+        public FormaProjekatListaKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public DataTable VratiListuProjekata()
+        {
+            ProjekatDBKlasa db = new ProjekatDBKlasa(konekcioniString);
+            return db.VratiSveProjekte();
+        }
+
+        public bool ObrisiProjekat( int id )
+        {
+            ProjekatDBKlasa db = new ProjekatDBKlasa(konekcioniString);
+            return db.ObrisiProjekat(id);
+        }
+
+        public string VratiNazivProjekta( int idProjekta )
+        {
+            string naziv = "";
+            using ( SqlConnection conn = new SqlConnection(konekcioniString) )
+            {
+                SqlCommand cmd = new SqlCommand("SELECT Naziv FROM Projekat WHERE ID = @id", conn);
+                cmd.Parameters.AddWithValue("@id", idProjekta);
+                conn.Open();
+
+                object result = cmd.ExecuteScalar();
+                if ( result != null )
+                {
+                    naziv = result.ToString();
+                }
+            }
+            return naziv;
+        }
+
+
+    }
+}

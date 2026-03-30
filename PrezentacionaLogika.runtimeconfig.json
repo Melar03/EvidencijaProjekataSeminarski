@@ -1,0 +1,31 @@
+﻿using KlasePodataka;
+using System.Data;
+
+namespace PrezentacionaLogika
+{
+    public class FormaUcesnikUnosKlasa
+    {
+        private string konekcioniString;
+
+        public FormaUcesnikUnosKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public bool DodajUcesnika( string ime, string prezime, string email )
+        {
+            UcesnikDBKlasa db = new UcesnikDBKlasa(konekcioniString);
+            return db.DodajUcesnika(ime, prezime, email);
+        }
+
+        public bool IzmeniUcesnika( int id, string ime, string prezime, string email )
+        {
+            UcesnikDBKlasa db = new UcesnikDBKlasa(konekcioniString);
+            return db.IzmeniUcesnika(id, ime, prezime, email);
+        }
+
+
+
+
+    }
+}

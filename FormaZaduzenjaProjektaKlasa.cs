@@ -1,0 +1,17 @@
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.csproj.AssemblyReference.cache
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.AssemblyInfoInputs.cache
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.AssemblyInfo.cs
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\PrezentacionaLogika.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\PrezentacionaLogika.pdb
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\EntityFramework.SqlServer.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\EntityFramework.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\Microsoft.SqlServer.Server.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\DBUtils.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\KlasePodataka.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\KlasePodataka.pdb
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\bin\Debug\net481\DBUtils.pdb
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\Prezenta.34EB9E51.Up2Date
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.dll
+C:\Users\Korisnik\source\repos\PrezentacionaLogika\obj\Debug\net481\PrezentacionaLogika.pdb

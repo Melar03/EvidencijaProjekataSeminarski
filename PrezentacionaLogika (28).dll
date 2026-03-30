@@ -1,0 +1,21 @@
+﻿using System;
+using KlasePodataka;
+
+namespace PrezentacionaLogika
+{
+    public class FormaProjekatUnosKlasa
+    {
+        private string konekcioniString;
+
+        public FormaProjekatUnosKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public bool SnimiProjekat( string naziv, string opis, DateTime datumPocetka, DateTime datumZavrsetka )
+        {
+            ProjekatDBKlasa db = new ProjekatDBKlasa(konekcioniString);
+            return db.DodajProjekat(naziv, opis, datumPocetka, datumZavrsetka);
+        }
+    }
+}

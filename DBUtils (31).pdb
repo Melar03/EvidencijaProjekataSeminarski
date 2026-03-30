@@ -1,0 +1,20 @@
+﻿using KlasePodataka;
+
+namespace PrezentacionaLogika
+{
+    public class FormaZaduzenjeDodajKlasa
+    {
+        private string konekcioniString;
+
+        public FormaZaduzenjeDodajKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public bool DodajZaduzenje( int idProjekta, int idUcesnika, string opis, string status )
+        {
+            ZaduzenjeDBKlasa db = new ZaduzenjeDBKlasa(konekcioniString);
+            return db.DodajZaduzenje(idProjekta, idUcesnika, opis, status);
+        }
+    }
+}

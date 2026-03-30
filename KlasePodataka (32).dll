@@ -1,0 +1,52 @@
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+using KlasePodataka;
+
+namespace PrezentacionaLogika
+{
+    public class FormaZaduzenjeListaKlasa
+    {
+        private string konekcioniString;
+
+        public FormaZaduzenjeListaKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public DataTable VratiZaduzenjaZaUcesnika( int idUcesnika )
+        {
+            ZaduzenjeDBKlasa db = new ZaduzenjeDBKlasa(konekcioniString);
+            return db.VratiZaduzenjaZaUcesnika(idUcesnika);
+        }
+
+        public bool ObrisiZaduzenje( int idZaduzenja )
+        {
+            ZaduzenjeDBKlasa db = new ZaduzenjeDBKlasa(konekcioniString);
+            return db.ObrisiZaduzenje(idZaduzenja);
+        }
+
+        public DataTable VratiZaduzenjaZaUcesnikaSaStatusom( int idUcesnika, string status )
+        {
+            using ( SqlConnection conn = new SqlConnection(konekcioniString) )
+            {
+                string query = @"SELECT Z.ID, Z.OpisZadatka, Z.Status, P.Naziv AS Projekat
+                         FROM Zaduzenje Z
+                         INNER JOIN Projekat P ON Z.IDProjekta = P.ID
+                         WHERE Z.IDUcesnika = @IDUcesnika AND Z.Status = @Status";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDUcesnika", idUcesnika);
+                cmd.Parameters.AddWithValue("@Status", status);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,30 @@
+﻿using System;
+using System.Data;
+using KlasePodataka; // namespace gde se nalazi KorisnikDBKlasa
+
+namespace PrezentacionaLogika
+{
+    public class FormaKorisnikVracanjeKorisnika
+    {
+        private string konekcioniString;
+
+        public FormaKorisnikVracanjeKorisnika( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        // Metoda za proveru login podataka
+        public DataRow ProveriKorisnika( string username, string password )
+        {
+            KorisnikDBKlasa db = new KorisnikDBKlasa(konekcioniString);
+            return db.VratiKorisnika(username, password);
+        }
+
+        // Opcionalno: možeš dodati metodu koja vraća sve korisnike
+        public DataTable VratiSveKorisnike()
+        {
+            KorisnikDBKlasa db = new KorisnikDBKlasa(konekcioniString);
+            return db.VratiSveKorisnike();
+        }
+    }
+}

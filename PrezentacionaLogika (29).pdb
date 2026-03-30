@@ -1,0 +1,53 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using KlasePodataka;
+
+namespace PrezentacionaLogika
+{
+    public class FormaUcesnikListaKlasa
+    {
+        private string konekcioniString;
+
+        public FormaUcesnikListaKlasa( string cs )
+        {
+            konekcioniString = cs;
+        }
+
+        public DataTable VratiUcesnike()
+        {
+            UcesnikDBKlasa db = new UcesnikDBKlasa(konekcioniString);
+            return db.VratiSveUcesnike();
+        }
+
+        public bool ObrisiUcesnika( int id )
+        {
+            UcesnikDBKlasa db = new UcesnikDBKlasa(konekcioniString);
+            return db.ObrisiUcesnika(id);
+        }
+
+        public string VratiImeIPrezime( int idUcesnika )
+        {
+            string imePrezime = "";
+            using ( SqlConnection conn = new SqlConnection(konekcioniString) )
+            {
+                SqlCommand cmd = new SqlCommand("SELECT Ime, Prezime FROM Ucesnik WHERE ID = @id", conn);
+                cmd.Parameters.AddWithValue("@id", idUcesnika);
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if ( reader.Read() )
+                {
+                    imePrezime = reader["Ime"] + " " + reader["Prezime"];
+                }
+            }
+            return imePrezime;
+        }
+
+        public DataTable VratiUcesnikaPoID( int id )
+        {
+            UcesnikDBKlasa db = new UcesnikDBKlasa(konekcioniString);
+            return db.VratiUcesnikaPoID(id);
+        }
+
+    }
+}
